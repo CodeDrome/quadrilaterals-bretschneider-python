@@ -1,8 +1,8 @@
-from functools import reduce
 import math
+from typing import List
 
 
-def calculate_area(sides, opposite_angles_degrees):
+def calculate_area(sides: List[float], opposite_angles_degrees: List[float]) -> float:
 
     '''
     Calculate the area of a quadrilateral using Bretschneider's Formula
@@ -19,7 +19,7 @@ def calculate_area(sides, opposite_angles_degrees):
                                         (semiperimeter - sides[2]) * \
                                         (semiperimeter - sides[3])
 
-    product_sides = reduce((lambda x, y: x * y), sides)
+    product_sides = math.prod(sides)
 
     sum_of_radians = math.radians(opposite_angles_degrees[0]) + math.radians(opposite_angles_degrees[1])
 
